@@ -14,7 +14,6 @@ class MainActivity2 : AppCompatActivity() {
         // Assign variables
         val etinput = findViewById<EditText>(R.id.etinput)
         val etoutput = findViewById<EditText>(R.id.etoutput)
-        val btnDecode = findViewById<Button>(R.id.btndecode)
         val btnEncode = findViewById<Button>(R.id.btnencode)
         val btnclear = findViewById<Button>(R.id.btnclear)
 
@@ -151,70 +150,6 @@ class MainActivity2 : AppCompatActivity() {
 
 
             etoutput.setText("")
-        })
-        btnDecode.setOnClickListener(View.OnClickListener {
-
-            val input1 = etinput.getText().toString()
-
-
-            val input = "$input1 "
-
-
-            val l = input.length
-
-
-            var i: Int
-            var j: Int
-            var p = 0
-
-
-            var pos = 0
-
-
-            var letter = ""
-
-
-            var output = ""
-            i = 0
-            while (i < l) {
-
-
-                var flag = 0
-
-
-                val ch = input.substring(i, i + 1)
-
-
-                if (ch.equals(" ", ignoreCase = true)) {
-
-
-                    p = i
-
-
-                    letter = input.substring(pos, p)
-
-
-                    pos = p + 1
-                    flag = 1
-                }
-                val letter1 = letter.trim { it <= ' ' }
-
-                if (flag == 1) {
-                    j = 0
-                    while (j <= 36) {
-                        if (letter1.equals(AlphaNumeric1[j], ignoreCase = true)) {
-                            output = output + AlphaNumeric[j]
-                            break
-                        }
-                        j++
-                    }
-                }
-                i++
-            }
-
-            etoutput.setText(output)
-
-
         })
     }
 }

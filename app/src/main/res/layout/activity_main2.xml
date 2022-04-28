@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#006600"
+    android:background="#F3B07B"
     android:padding="25dp"
     tools:context=".MainActivity">
 
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-8dp"
         android:gravity="center"
-        android:text="GfG"
+        android:text="MORSE CODE TRANSLATOR"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="25sp"
@@ -21,71 +22,102 @@
 
     <EditText
         android:id="@+id/etinput"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="366dp"
+        android:layout_height="55dp"
         android:layout_below="@+id/tvgfg"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="25dp"
         android:background="#ffffff"
         android:gravity="start" />
 
     <!--edit text to accept the input from the user-->
+
+    <!--edit text to display output to the user.
+        Edit text is used since the user can copy the
+        text easily if he wants to-->
     <LinearLayout
         android:id="@+id/llout"
-        android:layout_width="365dp"
-        android:layout_height="86dp"
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/etinput"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnencode"
-            android:layout_width="wrap_content"
+            android:layout_width="174dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
-            android:background="@drawable/mybutton"
+            android:backgroundTint="#A15606"
             android:padding="13dp"
-            android:text="EnCode"
+            android:text="TRANSLATE"
             android:textColor="#fff"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnclear"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
-            android:background="@drawable/mybutton"
+            android:backgroundTint="#A15606"
             android:padding="13dp"
             android:text="clear"
             android:textColor="#fff"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btndecode"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/mybutton"
-            android:padding="13dp"
-            android:text="decode"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
     </LinearLayout>
 
-    <!--edit text to display output to the user.
-        Edit text is used since the user can copy the
-        text easily if he wants to-->
     <EditText
         android:id="@+id/etoutput"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="367dp"
+        android:layout_height="65dp"
         android:layout_below="@+id/llout"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="32dp"
         android:background="#ffffff"
         android:gravity="start"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="215dp"
+        android:layout_below="@id/etoutput"
+        android:layout_marginTop="138dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="START VIBRATION"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/startvib" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/stopvib" />
+    </LinearLayout>
 
 </RelativeLayout>
